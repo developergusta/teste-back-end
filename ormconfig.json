@@ -1,0 +1,17 @@
+{
+    "type": "postgres",
+    "host": "batyr.db.elephantsql.com",
+    "port": 5432,
+    "username": "pedvdxyn",
+    "password": "LmRtCfSHMqX8mOZ3BxBfPcasMuFeXjq6",
+    "database": "pedvdxyn",
+    "entities": [
+       "src/models/*.ts"
+    ],
+    "migrations": [
+       "src/database/migrations/*.ts"
+    ],
+    "cli": {
+      "migrationsDir": "./src/database/migrations"
+  }
+ }
