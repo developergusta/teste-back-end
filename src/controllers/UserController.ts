@@ -16,10 +16,9 @@ export class UserController {
         return response.json(user);
     }
 
-    async listUsers(response: Response) {
+    async listUsers(request: Request, response: Response) {
         const usersService = new UserService();
         const users = await usersService.list();
-
         return response.json(users)
     }
 
@@ -29,7 +28,8 @@ export class UserController {
 
             const usersService = new UserService();
             const user = await usersService.findByUserId(user_id);
-            return response.json(user)
+
+            return response.json({...user, password:null})
         } catch (error) {
             console.error(error.message)
             return response.json({ message: 'User not found' })
